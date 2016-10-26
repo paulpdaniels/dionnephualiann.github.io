@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sexy_line {
+    margin: 15px 0;
+    height: 2px;
+    background: white;
+    background: -webkit-gradient(linear, 33% 0, 66% 0, from(#222222), to(#222222), color-stop(50%, white));
+}
+
+
+/*.g-item{*/
+    /*width: 500px;*/
+    /*height: 500px;*/
+/*}*/
+
+.my-name {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+    font-size: 40px !important;
+    font-weight: 300 !important;
+    letter-spacing: 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.menu-item-default {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    letter-spacing: 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.home-image {
+    max-height: 450px;
+}
+
+.viewer {
+    height: 620px;
+}
+
+.viewer-item {
+    max-height: 200px;
+}
+
+.viewer-thumb {
+    max-height: 10px;
+}
