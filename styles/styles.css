@@ -9,11 +9,9 @@
     background: -webkit-gradient(linear, 33% 0, 66% 0, from(#222222), to(#222222), color-stop(50%, white));
 }
 
-
-/*.g-item{*/
-    /*width: 500px;*/
-    /*height: 500px;*/
-/*}*/
+.dropdown .btn {
+    padding: 0;
+}
 
 .my-name {
     font-family: 'Open Sans Condensed', sans-serif !important;
@@ -22,6 +20,11 @@
     letter-spacing: 5px;
     color: white;
     text-transform: uppercase;
+}
+
+.my-name:hover, .my-name:focus {
+    text-decoration: overline;
+    color: white;
 }
 
 .menu-item-default {
@@ -33,18 +36,11 @@
     text-transform: uppercase;
 }
 
+.menu-item-default:hover, .menu-item-default:focus {
+    text-decoration: overline;
+    color: white;
+}
+
 .home-image {
     max-height: 450px;
-}
-
-.viewer {
-    height: 620px;
-}
-
-.viewer-item {
-    max-height: 200px;
-}
-
-.viewer-thumb {
-    max-height: 10px;
 }

@@ -5,7 +5,6 @@ const typescript = require('rollup-plugin-typescript');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const buffer = require('vinyl-buffer');
-const plumber = require('gulp-plumber');
 
 gulp.task('default', ['bundle', 'serve', 'watch']);
 

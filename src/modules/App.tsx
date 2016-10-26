@@ -1,6 +1,6 @@
 'use strict';
 import * as React from "react";
-import {Grid, Col, Row, Dropdown, MenuItem} from 'react-bootstrap';
+import {Grid, Col, Row, Dropdown, MenuItem, DropdownButton} from 'react-bootstrap';
 import {Link} from 'react-router';
 import {CustomToggle, CustomMenu} from "../components/CustomToggle";
 
@@ -26,20 +26,20 @@ export const App = React.createClass({
             <Link to="/about" className="menu-item-default">About</Link>
           </Col>
           <Col className="text-center" xsOffset={1} xs={2}>
-            <Dropdown>
-              <CustomToggle bsRole="toggle">
-                <Link className="menu-item-default">Gallery</Link>
-              </CustomToggle>
-              <CustomMenu bsRole="menu">
-                {projects.map((project, index) => {
-                  return (
-                    <MenuItem eventKey={index}>
-                      <Link to={`/gallery/${project.id}`}>{project.name}</Link>
-                    </MenuItem>
-                  )
-                })}
-              </CustomMenu>
-            </Dropdown>
+            <DropdownButton
+              bsStyle="link"
+              title="Gallery"
+              className="menu-item-default"
+              styles={{padding: 0}}
+            >
+              {projects.map((project, index) => {
+                return (
+                  <MenuItem eventKey={index}>
+                    <Link to={`/gallery/${project.id}`}>{project.name}</Link>
+                  </MenuItem>
+                )
+              })}
+            </DropdownButton>
           </Col>
           <Col className="text-center" xsOffset={1} xs={2}>
             <Link to="/contact" className="menu-item-default">Contact</Link>

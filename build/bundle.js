@@ -1,13 +1,5 @@
-(function (ReactDOM,reactRouter,React$1,reactBootstrap,redux,ramda,rxjs) {
+(function (reactDom,reactRouter,React$1,reactBootstrap,redux,ramda,rxjs) {
 'use strict';
-
-var ReactDOM__default = 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
-
-function __extends(d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
 
 var About = React$1.createClass({
     render: function () {
@@ -279,46 +271,6 @@ var Home = React$1.createClass({
     }
 });
 
-var CustomToggle = (function (_super) {
-    __extends(CustomToggle, _super);
-    function CustomToggle(props, context) {
-        _super.call(this, props, context);
-        this.handleClick = this.handleClick.bind(this);
-    }
-    CustomToggle.prototype.handleClick = function (e) {
-        e.preventDefault();
-        this.props.onClick(e);
-    };
-    CustomToggle.prototype.render = function () {
-        return (React$1.createElement("a", {href: "", onClick: this.handleClick}, this.props.children));
-    };
-    return CustomToggle;
-}(React$1.Component));
-var CustomMenu = (function (_super) {
-    __extends(CustomMenu, _super);
-    function CustomMenu(props, context) {
-        var _this = this;
-        _super.call(this, props, context);
-        this.onChange = function (e) { return _this.setState({ value: e.target.value }); };
-        this.onBlur = function () { return _this.setState({ value: '' }); };
-        this.state = { value: '' };
-    }
-    CustomMenu.prototype.focusNext = function () {
-        var input = ReactDOM__default.findDOMNode(this.input);
-        if (input) {
-            input.focus();
-        }
-    };
-    CustomMenu.prototype.render = function () {
-        var children = this.props.children;
-        var value = this.state.value;
-        return (React$1.createElement("div", {className: "dropdown-menu"}, 
-            React$1.createElement("ul", null, React$1.Children.toArray(children))
-        ));
-    };
-    return CustomMenu;
-}(React$1.Component));
-
 var App = React$1.createClass({
     render: function () {
         var projects = this.props.route.config.projects;
@@ -338,15 +290,11 @@ var App = React$1.createClass({
                     React$1.createElement(reactRouter.Link, {to: "/about", className: "menu-item-default"}, "About")
                 ), 
                 React$1.createElement(reactBootstrap.Col, {className: "text-center", xsOffset: 1, xs: 2}, 
-                    React$1.createElement(reactBootstrap.Dropdown, null, 
-                        React$1.createElement(CustomToggle, {bsRole: "toggle"}, 
-                            React$1.createElement(reactRouter.Link, {className: "menu-item-default"}, "Gallery")
-                        ), 
-                        React$1.createElement(CustomMenu, {bsRole: "menu"}, projects.map(function (project, index) {
-                            return (React$1.createElement(reactBootstrap.MenuItem, {eventKey: index}, 
-                                React$1.createElement(reactRouter.Link, {to: "/gallery/" + project.id}, project.name)
-                            ));
-                        })))
+                    React$1.createElement(reactBootstrap.DropdownButton, {bsStyle: "link", title: "Gallery", className: "menu-item-default", styles: { padding: 0 }}, projects.map(function (project, index) {
+                        return (React$1.createElement(reactBootstrap.MenuItem, {eventKey: index}, 
+                            React$1.createElement(reactRouter.Link, {to: "/gallery/" + project.id}, project.name)
+                        ));
+                    }))
                 ), 
                 React$1.createElement(reactBootstrap.Col, {className: "text-center", xsOffset: 1, xs: 2}, 
                     React$1.createElement(reactRouter.Link, {to: "/contact", className: "menu-item-default"}, "Contact")
@@ -371,7 +319,7 @@ var contactInfo = {
     address: 'San Francisco, CA',
     phoneNumber: 'XXX-XXX-XXXX'
 };
-ReactDOM.render(React$1.createElement(reactRouter.Router, {history: reactRouter.hashHistory}, 
+reactDom.render(React$1.createElement(reactRouter.Router, {history: reactRouter.hashHistory}, 
     React$1.createElement(reactRouter.Route, {path: "/", config: appConfig, component: App}, 
         React$1.createElement(reactRouter.IndexRoute, {component: Home}), 
         React$1.createElement(reactRouter.Route, {path: "about", component: About}), 
