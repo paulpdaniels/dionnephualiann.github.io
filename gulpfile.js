@@ -6,10 +6,28 @@ const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const buffer = require('vinyl-buffer');
 
-gulp.task('default', ['bundle', 'serve', 'watch']);
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+
+gulp.task('default', ['copy', 'bundle', 'serve', 'watch']);
 
 gulp.task('serve', () => {
   connect.server();
+});
+
+gulp.task('copy', () => {
+  return gulp.src([
+    'node_modules/redux/dist/redux.min.js',
+    'node_modules/react/dist/react.min.js',
+    'node_modules/react-dom/dist/react-dom.min.js',
+    'node_modules/react-bootstrap/dist/react-bootstrap.min.js',
+    'node_modules/react-router/umd/ReactRouter.min.js',
+    'node_modules/rxjs/bundles/Rx.min.js',
+    'node_modules/ramda/dist/ramda.min.js'
+  ])
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('build'));
 });
 
 gulp.task('bundle', () => {

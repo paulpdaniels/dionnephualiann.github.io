@@ -25,7 +25,7 @@ export const appConfig: IAppConfig = {
       name: "Personal",
       folder: "personal",
       gallery: [
-        {name: "Dragon"},
+        {name: "Dragon_low"},
         {name: "Lust"},
         {name: "GestureDrawings"},
         {name: "HippieGrannies"}
@@ -35,7 +35,7 @@ export const appConfig: IAppConfig = {
       id: "bb2",
       folder: "bloodbrothers",
       name: "Blood Brothers",
-      ext: "png",
+      ext: "jpg",
       gallery: [
         {name: "Exant"},
         {name: "Kay"},
@@ -57,7 +57,7 @@ export const appConfig: IAppConfig = {
     },
     {
       id: "ds",
-      ext: "png",
+      ext: "jpg",
       name: "DeckStorm",
       folder: "deckstorm",
       logo: '',
@@ -73,7 +73,7 @@ export const appConfig: IAppConfig = {
       id: "mmh",
       folder: "mightyheros",
       name: "Mighty Heros",
-      ext: "png",
+      ext: "jpg",
       gallery: [
         {name: "MarvelCharacterTurnTable"},
         {name: "MarvelIllustration01"},

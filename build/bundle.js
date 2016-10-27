@@ -16,7 +16,7 @@ var appConfig = {
             name: "Personal",
             folder: "personal",
             gallery: [
-                { name: "Dragon" },
+                { name: "Dragon_low" },
                 { name: "Lust" },
                 { name: "GestureDrawings" },
                 { name: "HippieGrannies" }
@@ -26,7 +26,7 @@ var appConfig = {
             id: "bb2",
             folder: "bloodbrothers",
             name: "Blood Brothers",
-            ext: "png",
+            ext: "jpg",
             gallery: [
                 { name: "Exant" },
                 { name: "Kay" },
@@ -48,7 +48,7 @@ var appConfig = {
         },
         {
             id: "ds",
-            ext: "png",
+            ext: "jpg",
             name: "DeckStorm",
             folder: "deckstorm",
             logo: '',
@@ -64,7 +64,7 @@ var appConfig = {
             id: "mmh",
             folder: "mightyheros",
             name: "Mighty Heros",
-            ext: "png",
+            ext: "jpg",
             gallery: [
                 { name: "MarvelCharacterTurnTable" },
                 { name: "MarvelIllustration01" },
@@ -266,7 +266,7 @@ var Contact = function (_a) {
 var Home = React$1.createClass({
     render: function () {
         return (React$1.createElement(reactBootstrap.Col, {md: 4, mdOffset: 4, className: "g-item"}, 
-            React$1.createElement(reactBootstrap.Image, {src: "/img/personal/dragon.jpg", responsive: true, className: "home-image center-block"})
+            React$1.createElement(reactBootstrap.Image, {src: "/img/personal/Dragon_low.jpg", responsive: true, className: "home-image center-block"})
         ));
     }
 });
