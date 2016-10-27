@@ -3,7 +3,9 @@
 import {createStore, combineReducers} from 'redux';
 import {find, propEq, merge} from 'ramda';
 import {Action} from "./actions";
-import {Observable} from "rxjs";
+import {from as _from} from 'rxjs/observable/from';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/publishBehavior';
 import {appConfig} from "./projects";
 
 
@@ -38,7 +40,7 @@ export const app = createStore(reducer, {
   projects: {projects: appConfig.projects}
 });
 
-export const app$ = Observable.from(app)
+export const app$ = _from(app)
   .map(() => app.getState())
   .publishBehavior(app.getState())
   .refCount();
