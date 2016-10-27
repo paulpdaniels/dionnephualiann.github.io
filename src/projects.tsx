@@ -72,7 +72,7 @@ export const appConfig: IAppConfig = {
     {
       id: "mmh",
       folder: "mightyheros",
-      name: "Mighty Heros",
+      name: "Mighty Heroes",
       ext: "jpg",
       gallery: [
         {name: "MarvelCharacterTurnTable"},
