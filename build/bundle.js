@@ -63,7 +63,7 @@ var appConfig = {
         {
             id: "mmh",
             folder: "mightyheros",
-            name: "Mighty Heros",
+            name: "Mighty Heroes",
             ext: "jpg",
             gallery: [
                 { name: "MarvelCharacterTurnTable" },
@@ -214,12 +214,12 @@ var Gallery = React$1.createClass({
                 React$1.createElement(reactBootstrap.Modal.Body, null, 
                     React$1.createElement(reactBootstrap.Carousel, null, 
                         React$1.createElement(reactBootstrap.Carousel.Item, null, 
-                            React$1.createElement("img", {width: 900, height: 500, alt: "900x500", src: "/img/personal/dragon.jpg"}), 
+                            React$1.createElement("img", {width: 900, height: 500, alt: "900x500", src: "/img/personal/Dragon.jpg"}), 
                             React$1.createElement(reactBootstrap.Carousel.Caption, null, 
                                 React$1.createElement("h3", null, "First slide label"), 
                                 React$1.createElement("p", null, "Nulla vitae elit libero, a pharetra augue mollis interdum."))), 
                         React$1.createElement(reactBootstrap.Carousel.Item, null, 
-                            React$1.createElement("img", {width: 900, height: 500, alt: "900x500", src: "/img/deckstorm/DesertKing.png"}), 
+                            React$1.createElement("img", {width: 900, height: 500, alt: "900x500", src: "/img/deckstorm/DesertKing.jpg"}), 
                             React$1.createElement(reactBootstrap.Carousel.Caption, null, 
                                 React$1.createElement("h3", null, "Second slide label"), 
                                 React$1.createElement("p", null, "Nulla vitae elit libero, a pharetra augue mollis interdum."))))
