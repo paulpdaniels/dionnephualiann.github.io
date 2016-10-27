@@ -2,8 +2,6 @@
 import * as React from "react";
 import {Grid, Col, Row, Dropdown, MenuItem, DropdownButton} from 'react-bootstrap';
 import {Link} from 'react-router';
-import {CustomToggle, CustomMenu} from "../components/CustomToggle";
-
 
 export const App = React.createClass({
   render() {
