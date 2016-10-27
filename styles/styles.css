@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sexy_line {
+    margin: 15px 0;
+    height: 2px;
+    background: white;
+    background: -webkit-gradient(linear, 33% 0, 66% 0, from(#222222), to(#222222), color-stop(50%, white));
+}
+
+.dropdown .btn {
+    padding: 0;
+}
+
+.my-name {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+    font-size: 40px !important;
+    font-weight: 300 !important;
+    letter-spacing: 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.my-name:hover, .my-name:focus {
+    text-decoration: overline;
+    color: white;
+}
+
+.menu-item-default {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    letter-spacing: 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.menu-item-default:hover, .menu-item-default:focus {
+    text-decoration: overline;
+    color: white;
+}
+
+.home-image {
+    max-height: 450px;
+}
