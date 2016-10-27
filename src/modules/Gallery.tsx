@@ -2,6 +2,9 @@
 import * as React from "react";
 import {Grid, Thumbnail, Row, Col, Image, Panel, Modal, Carousel} from 'react-bootstrap';
 import {app, app$} from '../app';
+import 'rxjs/add/operator/distinctUntilKeyChanged';
+import 'rxjs/add/operator/pluck';
+import 'rxjs/add/operator/filter';
 import {setSelected, setProject, resetSelected} from '../actions';
 
 const FeaturedImage = ({url, onClick}) =>
@@ -9,10 +12,22 @@ const FeaturedImage = ({url, onClick}) =>
     <Image src={url} onClick={onClick} responsive className="home-image center-block"/>
   </Panel>;
 
+const Logo = ({logo}) => {
+  return (
+    <div>
+      {logo === 'personal' || logo === 'miscellaneous' ?
+        <h1 className="text-center">{logo.charAt(0).toUpperCase() + logo.substring(1)}</h1> :
+        <Image src={logo} height={100} width={200} className="center-block"/>
+      }
+    </div>
+  );
+};
+
+
 const ProjectGallery = ({urls, logo}) =>
   <Panel>
     <Row>
-      <Image src={logo} height={100} width={200} className="center-block"/>
+      <Logo logo={logo}/>
     </Row>
     <br/>
     <Row>
@@ -73,9 +88,15 @@ export const Gallery = React.createClass({
       `${baseUrl}/${folder}/${gallery[selected].name}.${ext}` :
       '';
 
-    const logo = !!folder ?
-      `${baseUrl}/${folder}/logo.png` :
-      '';
+    let logo = '';
+
+    if (folder === 'personal') {
+      logo = 'personal';
+    } else if (folder === 'misc') {
+      logo = 'miscellaneous';
+    } else if (!!folder) {
+      logo = `${baseUrl}/${folder}/logo.png`;
+    }
 
     return (
       <Grid>
@@ -87,21 +108,17 @@ export const Gallery = React.createClass({
         </Col>
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Body>
-            <Carousel>
-              <Carousel.Item>
-                <img width={900} height={500} alt="900x500" src="/img/personal/Dragon.jpg"/>
-                <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img width={900} height={500} alt="900x500" src="/img/deckstorm/DesertKing.jpg"/>
-                <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-              </Carousel.Item>
+            <Carousel defaultActiveIndex={this.state.selected}>
+              {
+                gallery.map((item, i) => {
+                  const itemSource = `${baseUrl}/${folder}/${item.name}.${ext}`;
+                  return (
+                    <Carousel.Item>
+                      <img width={900} height={500} src={itemSource}/>
+                    </Carousel.Item>
+                  )
+                })
+              }
             </Carousel>
           </Modal.Body>
         </Modal>

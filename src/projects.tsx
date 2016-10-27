@@ -21,41 +21,6 @@ export const appConfig: IAppConfig = {
   defaultExt: "jpg",
   projects: [
     {
-      id: "personal",
-      name: "Personal",
-      folder: "personal",
-      gallery: [
-        {name: "Dragon_low"},
-        {name: "Lust"},
-        {name: "GestureDrawings"},
-        {name: "HippieGrannies"}
-      ]
-    },
-    {
-      id: "bb2",
-      folder: "bloodbrothers",
-      name: "Blood Brothers",
-      ext: "jpg",
-      gallery: [
-        {name: "Exant"},
-        {name: "Kay"},
-        {name: "MotherNature"},
-        {name: "Oren"},
-        {name: "ScrollPriestess"}
-      ]
-    },
-    {
-      id: "dal",
-      folder: "dragonage",
-      name: "Dragon Age",
-      gallery: [
-        {name: "Castleroom01"},
-        {name: "Castleroom02"},
-        {name: "ChristmasArmour"},
-        {name: "MageGolems"}
-      ]
-    },
-    {
       id: "ds",
       ext: "jpg",
       name: "DeckStorm",
@@ -72,7 +37,7 @@ export const appConfig: IAppConfig = {
     {
       id: "mmh",
       folder: "mightyheros",
-      name: "Mighty Heroes",
+      name: "Marvel Mighty Heroes",
       ext: "jpg",
       gallery: [
         {name: "MarvelCharacterTurnTable"},
@@ -85,7 +50,7 @@ export const appConfig: IAppConfig = {
     {
       id: "xmen",
       folder: "xmen",
-      name: "X-Men",
+      name: "X-Men: Battle of the Atom",
       gallery: [
         {name: "AppStore"},
         {name: "Box"},
@@ -96,6 +61,63 @@ export const appConfig: IAppConfig = {
         {name: "MissionClear"},
         {name: "Storm"},
         {name: "XmenFbad"}
+      ]
+    },
+    {
+      id: "bb2",
+      folder: "bloodbrothers",
+      name: "Blood Brothers",
+      ext: "jpg",
+      gallery: [
+        {name: "Exant"},
+        {name: "Kay"},
+        {name: "MotherNature"},
+        {name: "Oren"},
+        {name: "ScrollPriestess"}
+      ]
+    },
+    {
+      id: "misc",
+      name: "Miscellaneous",
+      folder: "misc",
+      gallery: [
+        {name: "02"},
+        {name: "03"},
+        {name: "04"},
+        {name: "05"},
+        {name: "09"},
+        {name: "10"},
+        {name: "11"},
+        {name: "13"},
+        {name: "14"},
+        {name: "16"},
+        {name: "17"},
+        {name: "19"}
+      ]
+    },
+    {
+      id: "personal",
+      name: "Personal",
+      folder: "personal",
+      gallery: [
+        {name: "Dragon_low"},
+        {name: "Lust"},
+        {name: "GestureDrawings"},
+        {name: "HippieGrannies"},
+        {name: "MrBanks"},
+        {name: "Ra"},
+        {name: "Tiger"}
+      ]
+    },
+    {
+      id: "dal",
+      folder: "dragonage",
+      name: "Dragon Age",
+      gallery: [
+        {name: "Castleroom01"},
+        {name: "Castleroom02"},
+        {name: "ChristmasArmour"},
+        {name: "MageGolems"}
       ]
     }
   ]

@@ -11,5 +11,4 @@ export const resetSelected = () => setSelected(0);
 
 
 // Set the selected project
-
 export const setProject = (id) => ({id, type: 'SELECT_PROJECT'});
