@@ -1,4 +1,6 @@
 CACHE MANIFEST
+# 10/28/2016 v1
+
 index.html
 img/personal/Dragon.jpg
 img/personal/GestureDrawings.jpg

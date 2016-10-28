@@ -44,5 +44,4 @@ fabric.properties
 
 node_modules/
 typings/
-
-build/*.min.js.map
+build/*.js.map
