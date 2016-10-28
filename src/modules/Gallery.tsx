@@ -15,8 +15,8 @@ const FeaturedImage = ({url, onClick}) =>
 const Logo = ({logo}) => {
   return (
     <div>
-      {logo === 'personal' ?
-        <h1 className="text-center">Personal</h1> :
+      {logo === 'personal' || logo === 'miscellaneous' ?
+        <h1 className="text-center">{logo.charAt(0).toUpperCase() + logo.substring(1)}</h1> :
         <Image src={logo} height={100} width={200} className="center-block"/>
       }
     </div>
@@ -91,7 +91,9 @@ export const Gallery = React.createClass({
     let logo = '';
 
     if (folder === 'personal') {
-      logo = 'personal'
+      logo = 'personal';
+    } else if (folder === 'misc') {
+      logo = 'miscellaneous';
     } else if (!!folder) {
       logo = `${baseUrl}/${folder}/logo.png`;
     }
@@ -106,7 +108,7 @@ export const Gallery = React.createClass({
         </Col>
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Body>
-            <Carousel>
+            <Carousel defaultActiveIndex={this.state.selected}>
               {
                 gallery.map((item, i) => {
                   const itemSource = `${baseUrl}/${folder}/${item.name}.${ext}`;

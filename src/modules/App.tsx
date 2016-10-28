@@ -33,7 +33,7 @@ export const App = React.createClass({
               {projects.map((project, index) => {
                 return (
                   <MenuItem eventKey={index}>
-                    <Link to={`/gallery/${project.id}`}>{project.name}</Link>
+                    <Link className="dropdown-item-default" to={`/gallery/${project.id}`}>{project.name}</Link>
                   </MenuItem>
                 )
               })}

@@ -37,7 +37,17 @@
 }
 
 .menu-item-default:hover, .menu-item-default:focus {
-    text-decoration: overline;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.dropdown-item-default {
+    color: white;
+}
+
+.dropdown-item-default:hover, .dropdown-item-default:focus {
+    text-decoration: underline;
     color: white;
 }
 

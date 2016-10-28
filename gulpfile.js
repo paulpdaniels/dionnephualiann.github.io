@@ -10,10 +10,10 @@ const buffer = require('vinyl-buffer');
 const alias = require('rollup-plugin-alias');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const commonJs = require('rollup-plugin-commonjs');
+const uglify = require('rollup-plugin-uglify');
 
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
 
 gulp.task('default', ['copy', 'bundle', 'serve', 'watch']);
 
@@ -34,27 +34,11 @@ gulp.task('copy', () => {
     .pipe(gulp.dest('build'));
 });
 
-class RollupRx {
-
-  constructor( options ){
-    this.options = options;
-  }
-
-  resolveId( id ){
-    if(id.startsWith('rxjs/')){
-      return `${__dirname}/node_modules/rxjs/${id.replace('rxjs/', '')}.js`;
-    }
-  }
-}
-
-const rollupRx = config => new RollupRx( config );
-
 gulp.task('bundle', () => {
   return rollup({
     entry: 'src/main.tsx',
     format: 'iife',
     plugins: [
-      // rollupRx(),
       typescript({
         jsx: 'react',
         typescript: require('typescript')
@@ -65,7 +49,8 @@ gulp.task('bundle', () => {
         module: true,
         browser: true,
         skip: ['react', 'react-dom', 'react-router', 'react-bootstrap', 'redux', 'ramda']
-      })
+      }),
+      uglify()
     ],
     sourceMap: true,
     globals: {
@@ -78,7 +63,7 @@ gulp.task('bundle', () => {
     }
   })
   // give the file the name you want to output with.
-    .pipe(source('bundle.js'))
+    .pipe(source('bundle.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
 
