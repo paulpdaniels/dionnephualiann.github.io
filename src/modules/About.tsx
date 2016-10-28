@@ -38,7 +38,7 @@ export const About = React.createClass({
             </Col>
             <Col xs={10}>
               <h5>
-                Hailing from a tiny island called Singapore, I am often hungry (literally too) for an adventure! As a person of many hobbies and interest, I am often up and running about to keep things interesting. Overall nothing could keep me grounded but my desire for expressing both my skills and talent for art. I want to make a name for myself. I am known as a jack-of-all-trade, a master-in-the making of everything. And hopefully world domination... maybe. Lol~ Keeping my fingers cross.
+                Hailing from a tiny island called Singapore, I am often hungry (literally too) for an adventure! As a person of many hobbies and interest, I am often up and running about to keep things interesting. Overall nothing could keep me grounded but my desire for expressing both my skills and talent for art. I want to make a name for myself. I am known as a jack-of-all-trades, a master-in-the making of everything. And hopefully world domination... maybe. Lol~ Keeping my fingers cross.
               </h5>
             </Col>
           </Row>
