@@ -6,7 +6,7 @@ export const Home = React.createClass({
   render() {
     return (
       <Col md={4} mdOffset={4} className="g-item">
-        <Image src="/img/personal/Dragon_low.jpg" responsive className="home-image center-block"/>
+        <Image src="/img/personal/Sloth.jpg" responsive className="home-image center-block"/>
       </Col>
     );
   }

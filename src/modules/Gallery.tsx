@@ -106,7 +106,7 @@ export const Gallery = React.createClass({
         <Col xs={12} md={6} mdOffset={1}>
           <FeaturedImage url={highlightUrl} onClick={this.open}/>
         </Col>
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal bsSize="lg" show={this.state.showModal} onHide={this.close}>
           <Modal.Body>
             <Carousel defaultActiveIndex={this.state.selected}>
               {
@@ -114,7 +114,10 @@ export const Gallery = React.createClass({
                   const itemSource = `${baseUrl}/${folder}/${item.name}.${ext}`;
                   return (
                     <Carousel.Item>
-                      <img width={900} height={500} src={itemSource}/>
+                      <Image
+                        responsive
+                        className="center-block"
+                        style={{'max-width': 900, 'max-height': 500}} src={itemSource}/>
                     </Carousel.Item>
                   )
                 })

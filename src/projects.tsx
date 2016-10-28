@@ -100,6 +100,7 @@ export const appConfig: IAppConfig = {
       name: "Personal",
       folder: "personal",
       gallery: [
+        {name: "Sloth"},
         {name: "Dragon_low"},
         {name: "Lust"},
         {name: "GestureDrawings"},
