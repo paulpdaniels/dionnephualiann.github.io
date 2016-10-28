@@ -43,7 +43,7 @@ export const Contact = ({route}) => (
       </div>
       <div id="emailAddress" className="block">
         <h4>Email Address</h4>
-        <p>{route.info.emailAddress}</p>
+        <p><a href={`mailto:${route.info.emailAddress}`}>{route.info.emailAddress}</a></p>
       </div>
     </div>
   </Col>
