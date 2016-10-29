@@ -6,6 +6,7 @@ import 'rxjs/add/operator/distinctUntilKeyChanged';
 import 'rxjs/add/operator/pluck';
 import 'rxjs/add/operator/filter';
 import {setSelected, setProject, resetSelected} from '../actions';
+import ReactGA from 'react-ga';
 
 const FeaturedImage = ({url, onClick}) =>
   <Panel>
@@ -36,7 +37,14 @@ const ProjectGallery = ({urls, logo}) =>
           <Thumbnail href="#"
                      src={url}
                      height={100} width={100}
-                     onClick={() => app.dispatch(setSelected(index))}/>
+                     onClick={() => {
+                        app.dispatch(setSelected(index));
+                        ReactGA.event({
+                          category: 'Gallery',
+                          action: 'featured',
+                          label: index.toString()
+                        });
+                     }}/>
         </Col>;
       })}
 

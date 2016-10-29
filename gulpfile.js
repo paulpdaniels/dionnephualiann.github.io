@@ -28,7 +28,8 @@ gulp.task('copy', () => {
     'node_modules/react-dom/dist/react-dom.min.js',
     'node_modules/react-bootstrap/dist/react-bootstrap.min.js',
     'node_modules/react-router/umd/ReactRouter.min.js',
-    'node_modules/ramda/dist/ramda.min.js'
+    'node_modules/ramda/dist/ramda.min.js',
+    'node_modules/react-ga/dist/react-ga.min.js'
   ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('build'));
@@ -48,7 +49,7 @@ gulp.task('bundle', () => {
         jsnext: true,
         module: true,
         browser: true,
-        skip: ['react', 'react-dom', 'react-router', 'react-bootstrap', 'redux', 'ramda']
+        skip: ['react', 'react-dom', 'react-router', 'react-bootstrap', 'react-ga', 'redux', 'ramda']
       }),
       uglify()
     ],
@@ -59,7 +60,8 @@ gulp.task('bundle', () => {
       'react-router': 'ReactRouter',
       'react-bootstrap': 'ReactBootstrap',
       'redux': 'Redux',
-      'ramda': 'R'
+      'ramda': 'R',
+      'react-ga': 'ReactGA'
     }
   })
   // give the file the name you want to output with.

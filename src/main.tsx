@@ -1,5 +1,6 @@
 'use strict';
 
+import * as React from "react";
 import {render} from 'react-dom';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 import {About} from "./modules/About";
@@ -7,8 +8,12 @@ import {Gallery} from "./modules/Gallery";
 import {Contact} from "./modules/Contact";
 import {Home} from "./modules/Home";
 import {App} from "./modules/App";
-import * as React from "react";
+
 import {appConfig} from "./projects";
+import ReactGA from 'react-ga';
+
+// Set up Google analytics
+ReactGA.initialize('UA-000000-01', {debug: true});
 
 const NoMatch = React.createClass({
   render() {
@@ -22,8 +27,12 @@ const contactInfo = {
   phoneNumber: 'XXX-XXX-XXXX'
 };
 
+function logPageView() {
+  ReactGA.pageview(this.state.location.pathname);
+}
+
 render(
-  <Router history={hashHistory}>
+  <Router history={hashHistory} onUpdate={logPageView}>
     <Route path="/" config={appConfig} component={App}>
       <IndexRoute component={Home}/>
       <Route path="about" component={About}/>
